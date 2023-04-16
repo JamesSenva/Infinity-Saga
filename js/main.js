@@ -40,31 +40,119 @@ soul
 
 */
 
-// if  SOUL stone is clicked show the img of thanos and the posters of the movies it appeared and its info
+// if  SOUL stone is clicked show the img of thanos and the posters of the movies it appeared and its info should show up
+// do that for every stone
 
+
+// the posters of infinity war and endgame will always be visible when nothing is clicked
+const infinity = document.querySelector('#infinity');
+const endgame = document.querySelector('#endgame');
+
+// main thanos and info about infinity stones
+const mainThanos = document.querySelector('#thanosMain');
+const mainInfo = document.querySelector('#stoneInfo');
+
+
+// stones nodelist
 const stones = document.querySelectorAll('.stones');
-const stoneInfo = document.querySelectorAll('.stoneInfo');
-
-console.log(stoneInfo);
 console.log(stones);
 
+// space stone
+const space = document.querySelector('#space');
+const spaceInfo = document.querySelectorAll('.space');
+console.log(spaceInfo);
+
+// mind stone
+const mind = document.querySelector('#mind');
+const mindInfo = document.querySelectorAll('.mind');
+
+// reality stone
+const reality = document.querySelector('#reality');
+const realityInfo = document.querySelectorAll('.reality');
+
+// power stone
+const power = document.querySelector('#power');
+const powerInfo = document.querySelectorAll('.power');
+
+// time stone
+const time = document.querySelector('#time');
+const timeInfo = document.querySelectorAll('.time');
+
+// soul stone
+const soul = document.querySelector('#soul');
+const soulInfo = document.querySelectorAll('.soul');
+
 stones.forEach( stone => {
-    stone.addEventListener('click', e => {
-        console.log(e);
-        if(e.target.classList.includes('space')){
-            console.log('space clicked');
+    stone.addEventListener('click', function(e) {
+        if(e.target.id === 'space'){
+            infinity.classList.remove('hide');
+            endgame.classList.remove('hide');
+            mainInfo.classList.add('hide');
+            mainThanos.classList.add('hide');
+            spaceInfo.forEach( s => s.classList.remove('hide'));
+            mindInfo.forEach( m => m.classList.add('hide'));
+            realityInfo.forEach( r => r.classList.add('hide'));
+            powerInfo.forEach( p => p.classList.add('hide'));
+            timeInfo.forEach( t => t.classList.add('hide'));
+            soulInfo.forEach( sl => sl.classList.add('hide'));
+        }else if(e.target.id === 'mind'){
+            infinity.classList.remove('hide');
+            endgame.classList.remove('hide');
+            mainInfo.classList.add('hide');
+            mainThanos.classList.add('hide');
+            mindInfo.forEach( m => m.classList.remove('hide'));
+            spaceInfo.forEach( s => s.classList.add('hide'));
+            realityInfo.forEach( r => r.classList.add('hide'));
+            powerInfo.forEach( p => p.classList.add('hide'));
+            timeInfo.forEach( t => t.classList.add('hide'));
+            soulInfo.forEach( sl => sl.classList.add('hide'));
+        }else if(e.target.id === 'reality'){
+            infinity.classList.remove('hide');
+            endgame.classList.remove('hide');
+            mainInfo.classList.add('hide');
+            mainThanos.classList.add('hide');
+            realityInfo.forEach( r => r.classList.remove('hide'));
+            mindInfo.forEach( m => m.classList.add('hide'));
+            spaceInfo.forEach( s => s.classList.add('hide'));
+            powerInfo.forEach( p => p.classList.add('hide'));
+            timeInfo.forEach( t => t.classList.add('hide'));
+            soulInfo.forEach( sl => sl.classList.add('hide'));
+        }else if(e.target.id === 'power'){
+            infinity.classList.remove('hide');
+            endgame.classList.remove('hide');
+            mainInfo.classList.add('hide');
+            mainThanos.classList.add('hide');
+            powerInfo.forEach( p => p.classList.remove('hide'));
+            realityInfo.forEach( r => r.classList.add('hide'));
+            mindInfo.forEach( m => m.classList.add('hide'));
+            spaceInfo.forEach( s => s.classList.add('hide'));
+            timeInfo.forEach( t => t.classList.add('hide'));
+            soulInfo.forEach( sl => sl.classList.add('hide'));
+        }else if(e.target.id === 'time'){
+            infinity.classList.remove('hide');
+            endgame.classList.remove('hide');
+            mainInfo.classList.add('hide');
+            mainThanos.classList.add('hide');
+            timeInfo.forEach( t => t.classList.remove('hide'));
+            powerInfo.forEach( p => p.classList.add('hide'));
+            realityInfo.forEach( r => r.classList.add('hide'));
+            mindInfo.forEach( m => m.classList.add('hide'));
+            spaceInfo.forEach( s => s.classList.add('hide'));
+            soulInfo.forEach( sl => sl.classList.add('hide'));
+        }else if(e.target.id === 'soul'){
+            infinity.classList.remove('hide');
+            endgame.classList.remove('hide');
+            mainInfo.classList.add('hide');
+            mainThanos.classList.add('hide');
+            soulInfo.forEach( sl => sl.classList.remove('hide'));
+            timeInfo.forEach( t => t.classList.add('hide'));
+            powerInfo.forEach( p => p.classList.add('hide'));
+            realityInfo.forEach( r => r.classList.add('hide'));
+            mindInfo.forEach( m => m.classList.add('hide'));
+            spaceInfo.forEach( s => s.classList.add('hide'));
         }
     })
 })
-
-
-
-
-
-
-
-
-
 
 
 
